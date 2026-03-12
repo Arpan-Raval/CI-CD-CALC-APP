@@ -1,4 +1,4 @@
-from calculator import add, subtract, multiply, divide
+from src.calculator import add, subtract, multiply, divide
 
 print("Calculator Example")
 
