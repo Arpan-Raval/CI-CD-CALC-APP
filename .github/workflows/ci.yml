@@ -44,4 +44,11 @@ jobs:
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/calculator-app:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/calculator-app:${{ github.run_number }}
-        
+
+    - name: Deploy Container
+      run: |
+        docker pull ${{ secrets.DOCKER_USERNAME }}/calculator-app:latest
+        docker stop calculator-container || true
+        docker rm calculator-container || true
+        docker run -d --name calculator-container ${{ secrets.DOCKER_USERNAME }}/calculator-app:latest
+            

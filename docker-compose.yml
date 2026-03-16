@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  calculator-app:
+    image: arpanravaldocker/calculator-app:latest
+    container_name: calculator-container
+    restart: always
+    
